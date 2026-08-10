@@ -156,9 +156,9 @@ def fetch_messages(channel):
 
 def format_message(msg):
     # Signature: the post's own author name if the channel has "Sign
-    # messages" on, otherwise fall back to the channel name.
+    # messages" on, otherwise fall back to the channel name (not a link).
     signature = msg.get("author") or msg["channel"]
-    return f"{msg['text']}\n\n{msg['link']}\n— {signature}"
+    return f"{msg['text']}\n\n— {signature}"
 
 
 def poll_once(seen, first_run):
